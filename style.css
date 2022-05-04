@@ -1,5 +1,7 @@
 body{
   background-color: lightcoral;
+  height: auto;
+  width: auto;
 }
 .header {
   font-family: 'Montserrat', sans-serif;
@@ -15,14 +17,81 @@ body{
   border-radius: 5px;
   display:flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.photo {
+  height: 200px;
+  object-fit:cover;
+  width: 200px;
+  padding: 15px 25px 15px 25px;
+  border-radius: 50%;
+}
+
+.slide {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 15px 25px 15px 25px;
+  position:absolute;
+}
+
+.main-photo {
+  height:230px;
+}
+#hyenes-card {
+  flex-grow: 1;
+  text-align: right;
+}
+#slide-3 {
+  animation: fadeOut;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* #slide-2 {
+  animation: fadeOut, fadeIn;
+  animation-duration: 2000ms, 2000ms;
+  animation-delay:2000ms, 8000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, infinite;
+}
+
+#slide-1 {
+  animation: fadeOut, fadeIn;
+  animation-duration: 2000ms, 2000ms;
+  animation-delay:4000ms, 10000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, infinite;
+} */
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+
+  100% {
+    opacity:0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+
+  100% {
+    opacity:1;
+  }
 }
 
 .card {
   font-family: 'EB Garamond', serif;
   color: lightcyan;
-  margin: -150px 35px;
-
 }
 
 
@@ -36,33 +105,15 @@ body{
   padding: 0px 5px;
 }
 
-
-#photo {
-  height: 200px;
-  object-fit:cover;
-  width: 200px;
-  padding: 15px 25px 15px 25px;
-  border-radius: 50%;
-}
-
-#photo2 {
-  height: 200px;
-  object-fit:cover;
-  width: 200px;
-  padding: 15px 25px 15px 25px;
-  border-radius: 50%;
-  text-align: right;
-}
-
 @media (max-width: 1280px){
   .container {
-    padding-left: 50px;
+    padding: 0 50px;
   }
 }
 
 @media (max-width: 1024px) {
   .container {
-    padding-left: 25px;
+    padding: 0 25px;
     margin-left: 25px;
   }
 
